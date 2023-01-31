@@ -19,7 +19,6 @@ namespace BackEnd.Controllers
         public CategoryController()
         {
             categoryDAL = new CategoryDALImpl(new Entities.NorthWindContext());
-
         }
         #endregion
 
