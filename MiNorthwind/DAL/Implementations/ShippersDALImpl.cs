@@ -23,20 +23,22 @@ namespace DAL.Implementations
 
 
 
+
+
         public bool Add(Shipper entity)
-        {
-            try
             {
-                using (UnidadDeTrabajo<Shipper> unidad = new UnidadDeTrabajo<Shipper>(context))
+                try
                 {
-                    unidad.genericDAL.Add(entity);
-                    return true;
+                    using (UnidadDeTrabajo<Shipper> unidad = new UnidadDeTrabajo<Shipper>(context))
+                    {
+                        bool flag = unidad.genericDAL.Add(entity);
+                        return true;
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
+                catch (Exception ex)
+                {
+                    return false;
+                }
 
         }
 
